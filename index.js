@@ -237,7 +237,7 @@ function getRunnersByTShirtSize(runners, tShirtSize) {
  * @returns a number which is the sum of the donations by all runners.
  */
 function tallyUpDonations(runners) {
-    const total = [];
+
 }
 
 
@@ -258,14 +258,11 @@ function tallyUpDonations(runners) {
  * etc
  */
 function counterMaker() {
-    // BROKEN CODE STARTS
-    const count = 0;
-
-    function counter() {
-        ++count
-    }
-    // BROKEN CODE ENDS
-}
+    let count = 0;
+    return function counter() {
+        return count++;
+    };
+};
 
 /**
  * ### Challenge `counterMakerWithLimit`
@@ -287,8 +284,11 @@ function counterMaker() {
  * counter() // should return 0
  * etc
  */
-function counterMakerWithLimit( /* CODE HERE */ ) {
-    /* CODE HERE */
+function counterMakerWithLimit(maxValue) {
+    let count = 0;
+    return function counter() {
+        return count++;
+    }
 }
 
 /////////////// END OF CHALLENGE ///////////////
